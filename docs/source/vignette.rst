@@ -89,7 +89,7 @@ Therefore, at this point we offer three options:
 option (A) is to wait on the simulations to finish.
 If you are feeling impatient, you may instead (B) download a .tar file---``wget http://sesame.uoregon.edu/~chriscs/output_dir.tar.gz;`` ``tar -xf output_dir.tar.gz -C vignette/``---that contains data that was pre-processed for training with ``disperseNN2`` and skip to the :ref:`vignette_training` section.
 Or, (C) check out our :ref:`google_colab_notebook` where the pre-processed data and GPUs are available.
-(The tree sequences are available as a 5gb tarball `here <http://sesame.uoregon.edu/~chriscs/TreeSeqs.tar.gz>`_).
+(The tree sequences are available as a 6gb tarball `here <http://sesame.uoregon.edu/~chriscs/TreeSeqs.tar.gz>`_).
 
 The below command runs the simualtions (option A). The number of simulations run in parallel can be adjusted with ``num_threads``:
 
@@ -207,7 +207,7 @@ This preprocessing step will take a while (maybe an hour), so it's a good time t
 -----------
 
 In the below ``disperseNN2`` training command, there are two options that bear a bit of explanation.
-In the example data we are working with there are 95 individuals, and so ${95\choose 2}$ = 4465 pairs of individuals.
+In the example data we are working with there are 95 individuals, and so :math:`{95 \choose 2} = 4465` pairs of individuals.
 We set ``--pairs`` to 1000 to reduce the number of pairwise comparisons used and thus the memory requirement.
 Further our architecture only considers a subset of pairs on the backward pass for gradient computation in first half of the network;
 this number is chosen with ``--pairs_encode``.
